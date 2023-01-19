@@ -116,7 +116,7 @@ body {
 
 main {
   min-height: 100vh;
-  padding: 25px;
+  padding: 20px;
 
   background-image: linear-gradient(
     to bottom,

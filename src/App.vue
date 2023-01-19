@@ -100,7 +100,7 @@ export default {
 
 body {
   font-family: "montserrat", sans-serif;
-  width: 30%;
+  <!-- width: 30%; -->
   margin: 20px auto 0;
   border-radius: 90px;
 }

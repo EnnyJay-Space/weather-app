@@ -1,6 +1,12 @@
 <template>
-  <div id="app" :class="typeof weather.main != 'undefined' && weather.main.temp > 16 ? 'warm' : ''">
+  <div
+    id="app"
+    :class="
+      typeof weather.main != 'undefined' && weather.main.temp > 16 ? 'warm' : ''
+    "
+  >
     <main>
+      <h3 class="title">{{ title }}</h3>
       <div class="search-box">
         <input
           type="text"
@@ -37,6 +43,7 @@ export default {
       url_base: "http://api.openweathermap.org/data/2.5/",
       query: "",
       weather: {},
+      title:"Weather Condition"
     };
   },
   methods: {
@@ -100,7 +107,14 @@ export default {
 
 body {
   font-family: "montserrat", sans-serif;
-  border-radius: 90px;
+  border-radius: 20px;
+  width: 25%;
+  margin: 0 auto;
+  /* background: #000; */
+  border-top: 50px solid #000;
+  border-left: 20px solid #000;
+  border-bottom: 20px solid #000;
+  border-right: 20px solid #000;
 }
 
 #app {
@@ -108,14 +122,17 @@ body {
   background-size: cover;
   background-position: bottom;
   transition: 0.4s;
+  /* border-radius: 20px; */
 }
 
-#app.warm{
-  background-image: url('./assets/warm-bg.jpg');
+#app.warm {
+  /* border-radius: 20px; */
+  background-image: url("./assets/warm-bg.jpg");
 }
 
 main {
-  min-height: 100vh;
+  /* border-radius: 20px; */
+  height: 90vh;
   padding: 20px;
 
   background-image: linear-gradient(
@@ -124,7 +141,11 @@ main {
     rgba(0, 0, 0, 0.75)
   );
 }
-
+.title{
+  color: #fff;
+  margin-bottom: 1rem;
+  font-family: "montserrat", sans-serif;
+}
 .search-bar {
   width: 100%;
   margin-bottom: 30px;
@@ -195,5 +216,24 @@ main {
   font-weight: 700;
   font-style: italic;
   text-shadow: 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* =========Media Queries======= */
+@media screen and (max-width: 767px){
+  body{
+    width: 100%;
+    border-top: 0px solid #000;
+    border-left: 0px solid #000;
+    border-bottom:0px solid #000;
+    border-right:0px solid #000;
+  }
+  main{
+    height: 100vh;
+  }
+}
+@media screen and (min-width: 767px) and (max-width: 1023px){
+  body{
+    width: 50%;
+  }
 }
 </style>

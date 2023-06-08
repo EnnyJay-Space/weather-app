@@ -7,6 +7,7 @@
   >
     <main>
       <h3 class="title">{{ title }}</h3>
+      <p class="sub-title">{{ sub_title }}</p>
       <div class="search-box">
         <input
           type="text"
@@ -43,7 +44,8 @@ export default {
       url_base: "https://api.openweathermap.org/data/2.5/",
       query: "",
       weather: {},
-      title:"Weather Condition"
+      title:"Weather Condition",
+      sub_title:"Type the name of the city!"
     };
   },
   methods: {
@@ -145,6 +147,10 @@ main {
   color: #fff;
   margin-bottom: 1rem;
   font-family: "montserrat", sans-serif;
+}
+.sub-title{
+  font-weight: 700;
+  margin-bottom: 6px;
 }
 .search-bar {
   width: 100%;
